@@ -49,7 +49,7 @@ Unlike upstream XWayland is enabled by default, so dependencies required by X us
 XWayland can be disabled by commenting out the lines below `# XWayland Support` in `config.mk` and uncommenting the lines below `No XWayland Suport`.
 
 `=dwl-0.7::gentoo` respects user defined `CC` and `PKG_CONFIG`. Building manually will not. If you want to use something other than `gcc` and `pkg-config` set that in `config.mk`.
-You may also want to set `MAKEOPTS` to build with optimisations.
+You may want to set other options as well. e.g. `make CFLAGS="-march=native -O2 -pipe"`
 
 Additional Dependencies:
 
