@@ -6,6 +6,46 @@ patches and a custom `config.h`.
 It is not intended for general use, some parts of it will rely on my specific hardware
 and software preferences. I will try to document these below.
 
+## Features
+
+This fork is intended to be dwl with a few additional features while still adhering to
+suckless philosophy to a lesser extent. Features I do not see as necessary will not be added.
+
+**Current Features:**
+
+- All features provided by [dwl-7.0](https://codeberg.org/dwl/dwl/src/branch/0.7/README.md)
+- [Additional monitor configuration](https://codeberg.org/dwl/dwl-patches/src/branch/main/patches/monitorconfig/monitorconfig.patch)
+
+**Planned Features:**
+
+- Improved slave/master management
+  - pertag (Seperate layout, nmaster and mfact for each tag)
+  - zoomswap (Swap current window and previous master when zooming)
+  - winview (switches the visible tags to the tags on which the current client is visible)
+  - Swap current visible tags with visible tags on different monitor
+  - singletagset (share a single set of tags between all monitors. Might implement it to work a bit differently still unsure what would be best.)
+  - sticky (make a client visible on all tags)
+  - follow (optionally follow a window when it is sent to another tag)
+  - stacker (lots more stack management)
+  - attachbottom (but with alternate keybind to launch windows like this, not default)
+- Startup script
+- spawninfo (Allows running spawn commands with information about the focused window)
+- commands to notify-send with information that would usually be in a bar or window title
+
+**Features Under Consideration:**
+
+- IPC (will only be added if it is the simplest way to implement a needed feature)
+- More layout functions
+- Window groups (so several windows can be in a stack in a single tile position.)
+- shiftview (cycle through tags with visible windows)
+- Patches to reduce flickering, apps going black and other bugs that I haven't personally experienced yet.
+
+**Unplanned Features:**
+
+- Status bar
+- Window titlebars
+- Eyecandy (gaps, rounded corners, wallpaper, animations etc.)
+
 ## Building dwl for Gentoo linux
 
 Will add ebuild for this fork in the future but for now build manually.
