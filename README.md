@@ -1,7 +1,7 @@
 # dwl - dwm for Wayland
 
 Join us on our IRC channel: [#dwl on Libera Chat]  
-Or on our [Discord server].
+Or on the community-maintained [Discord server].
 
 dwl is a compact, hackable compositor for [Wayland] based on [wlroots]. It is
 intended to fill the same space in the Wayland world that dwm does in X11,
@@ -56,7 +56,7 @@ To enable XWayland, you should uncomment its flags in `config.mk`.
 ## Configuration
 
 All configuration is done by editing `config.h` and recompiling, in the same
-manner as dwm. There is no way to separately restart the window manager in
+manner as [dwm]. There is no way to separately restart the window manager in
 Wayland without restarting the entire display server, so any changes will take
 effect the next time dwl is executed.
 
@@ -119,6 +119,15 @@ script with the line
 
 To get a list of status bars that work with dwl consult our [wiki].
 
+### (Known) Java nonreparenting WM issue
+Certain IDEs don't display correctly unless an environmental variable for Java AWT
+indicates that the WM is nonreparenting.
+
+For some Java AWT-based IDEs, such as Xilinx Vivado and Microchip MPLAB X, the
+following environment variable needs to be set before running the IDE or dwl:
+
+    export _JAVA_AWT_WM_NONREPARENTING=1
+
 ## Replacements for X applications
 
 You can find a [list of useful resources on our wiki].
@@ -173,7 +182,7 @@ developers. This was made possible in many cases by looking at how sway
 accomplished something, then trying to do the same in as suckless a way as
 possible.
 
-Many thanks to suckless.org and the dwm developers and community for the
+Many thanks to suckless.org and the [dwm] developers and community for the
 inspiration, and to the various contributors to the project, including:
 
 - **Devin J. Pohly for creating and nurturing the fledgling project**
