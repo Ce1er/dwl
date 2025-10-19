@@ -44,6 +44,10 @@ BDEPEND="
 "
 ```
 
+**Note:**
+Unlike upstream XWayland is enabled by default, so dependencies required by X use flag are required by default as well.
+XWayland can be disabled by commenting out the lines below `# XWayland Support` in `config.mk` and uncommenting the lines below `No XWayland Suport`.
+
 Additional Dependencies:
 
 - kitty: used in `termcmd` in `config.h`
