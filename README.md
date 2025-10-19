@@ -18,7 +18,7 @@ suckless philosophy to a lesser extent. Features I do not see as necessary will 
 
 **Planned Features:**
 
-- Improved slave/master management
+- Improved slave/master management (this will definitely be implemented but the proposed methods of improving it may or may not be implemented).
   - pertag (Seperate layout, nmaster and mfact for each tag)
   - zoomswap (Swap current window and previous master when zooming)
   - winview (switches the visible tags to the tags on which the current client is visible)
