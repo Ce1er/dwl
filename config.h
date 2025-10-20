@@ -147,6 +147,20 @@ static const enum libinput_config_tap_button_map button_map =
 /* commands */
 static const char *termcmd[] = {"kitty", NULL};
 static const char *menucmd[] = {"wofi", "--show", "drun", NULL};
+static const char *raisevolcmd[] = {"wpctl", "set-volume",
+                                    "@DEFAULT_AUDIO_SINK@"
+                                    "2%+",
+                                    NULL};
+static const char *lowervolcmd[] = {"wpctl", "set-volume",
+                                    "@DEFAULT_AUDIO_SINK@"
+                                    "2%-",
+                                    NULL};
+static const char *mutecmd[] = {"wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@",
+                                "toggle", NULL};
+static const char *playcmd[] = {"playerctl", "play-pause", NULL};
+static const char *prevcmd[] = {"playerctl", "previous", NULL};
+static const char *nextcmd[] = {"playerctl", "next", NULL};
+static const char *screenshotcmd[] = {"grim", "-g", "$(slurp)"};
 
 // clang-format off
 static const Key keys[] = {
@@ -174,6 +188,13 @@ static const Key keys[] = {
     {MODKEY,                     XKB_KEY_period,     focusmon, {.i = WLR_DIRECTION_RIGHT}},
     {MODKEY | WLR_MODIFIER_SHIFT,XKB_KEY_less,       tagmon, {.i = WLR_DIRECTION_LEFT}},
     {MODKEY | WLR_MODIFIER_SHIFT,XKB_KEY_greater,    tagmon, {.i = WLR_DIRECTION_RIGHT}},
+    {0,                           XKB_KEY_XF86AudioRaiseVolume, spawn, {.v = raisevolcmd}},
+    {0,                           XKB_KEY_XF86AudioLowerVolume, spawn, {.v = lowervolcmd}},
+    {0,                           XKB_KEY_XF86AudioMute,      spawn, {.v = mutecmd}},
+    {0,                           XKB_KEY_XF86AudioPlay,      spawn, {.v = playcmd}},
+    {0,                           XKB_KEY_XF86AudioPrev,      spawn, {.v = prevcmd}},
+    {0,                           XKB_KEY_XF86AudioNext,      spawn, {.v = nextcmd}},
+    {0,                           XKB_KEY_Print,              spawn,  {.v = screenshotcmd}},
     TAGKEYS(XKB_KEY_1, XKB_KEY_exclam, 0),
     TAGKEYS(XKB_KEY_2, XKB_KEY_doublelowquotemark, 1),
     TAGKEYS(XKB_KEY_3, XKB_KEY_sterling, 2),
@@ -184,6 +205,7 @@ static const Key keys[] = {
     TAGKEYS(XKB_KEY_8, XKB_KEY_asterisk, 7),
     TAGKEYS(XKB_KEY_9, XKB_KEY_parenleft, 8),
     {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_Q, quit, {0}},
+
 
     /* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
     {WLR_MODIFIER_CTRL | WLR_MODIFIER_ALT, XKB_KEY_Terminate_Server, quit, {0}},
