@@ -158,7 +158,7 @@ static const char *mutecmd[] = {"wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@",
 static const char *playcmd[] = {"playerctl", "play-pause", NULL};
 static const char *prevcmd[] = {"playerctl", "previous", NULL};
 static const char *nextcmd[] = {"playerctl", "next", NULL};
-static const char *screenshotcmd[] = {"grim", "-g", "$(slurp)"};
+static const char *screenshotcmd[] = {"grim", "-g", "$(slurp)", NULL};
 
 // clang-format off
 static const Key keys[] = {
