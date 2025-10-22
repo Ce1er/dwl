@@ -147,14 +147,12 @@ static const enum libinput_config_tap_button_map button_map =
 /* commands */
 static const char *termcmd[] = {"kitty", NULL};
 static const char *menucmd[] = {"wofi", "--show", "drun", NULL};
+
+// Commands below do not work
 static const char *raisevolcmd[] = {"wpctl", "set-volume",
-                                    "@DEFAULT_AUDIO_SINK@"
-                                    "2%+",
-                                    NULL};
+                                    "@DEFAULT_AUDIO_SINK@", "2%+", NULL};
 static const char *lowervolcmd[] = {"wpctl", "set-volume",
-                                    "@DEFAULT_AUDIO_SINK@"
-                                    "2%-",
-                                    NULL};
+                                    "@DEFAULT_AUDIO_SINK@", "2%-", NULL};
 static const char *mutecmd[] = {"wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@",
                                 "toggle", NULL};
 static const char *playcmd[] = {"playerctl", "play-pause", NULL};
